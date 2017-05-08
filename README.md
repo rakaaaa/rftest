@@ -1,9 +1,9 @@
 # Flask Heroku Example
 _(This repo is part of our [Free Flask Tutorial](https://flask-tutorial.com))_
 
-This repo contains some sample code to deploy a simple (but complete) Flask application to [Heroku](https://heroku.com). The app has:
+This repo contains some sample code to deploy a simple (but complete) Flask application to [Heroku](https://heroku.com). The deployed app counts with the following features:
 
-* Python 3.6 🐍
+* Running Python 3.6 🐍
 * Access to a Postgres Database 📘
 * Static Files management with [WhiteNoise](http://whitenoise.evans.io/en/stable/) 🔌
 
