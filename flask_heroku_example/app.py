@@ -12,7 +12,7 @@ def connect_db():
 
 
 #@app.before_request
-d#ef before_request():
+#def before_request():
   #  g.db_conn = connect_db()
 
 
