@@ -1,6 +1,6 @@
 import os
 import psycopg2
-from flask import Flask, render_template, , jsonify, request, g
+from flask import Flask, render_template,jsonify, request, g
 
 
 app = Flask(__name__)
@@ -21,7 +21,7 @@ def connect_db():
 #    cur = g.db_conn.cursor()
  #   cur.execute("SELECT * FROM country;")
   #  return render_template('index.html', countries=cur.fetchall())
- #    return "Hello Krsna"   
+ #      return "Hello Krsna"   
      
      
 app = Flask(__name__)
