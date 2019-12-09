@@ -11,13 +11,14 @@ def connect_db():
     return psycopg2.connect(os.environ.get('DATABASE_URL'))
 
 
-@app.before_request
-def before_request():
-    g.db_conn = connect_db()
+#@app.before_request
+d#ef before_request():
+  #  g.db_conn = connect_db()
 
 
 @app.route('/')
 def index():
-    cur = g.db_conn.cursor()
-    cur.execute("SELECT * FROM country;")
-    return render_template('index.html', countries=cur.fetchall())
+#    cur = g.db_conn.cursor()
+ #   cur.execute("SELECT * FROM country;")
+  #  return render_template('index.html', countries=cur.fetchall())
+     return "Hello Krsna"   
