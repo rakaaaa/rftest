@@ -54,9 +54,12 @@ class AuthAndRetrieveData:
         self.isSandbox = isSandbox 
         
     def authentication():
-        session_id, instance = SalesforceLogin(userName, password, security_token=token, sandbox=isSandbox ) 
+        if(token):
+            session_id, instance = SalesforceLogin(userName, password, security_token=token, sandbox=isSandbox ) 
+        else:
+            session_id, instance = SalesforceLogin(userName, password, sandbox=isSandbox )         
         sf = Salesforce(instance=instance, session_id=session_id)
-    
+        
     def retrieveData(self, sf):
         queryRFA = sf.bulk.Request_for_Assistance__c.query("Select id, Name from Request_for_Assistance__c limit 10")
         return queryRFA
