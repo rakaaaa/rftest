@@ -1,7 +1,10 @@
 import os
 import psycopg2
 from flask import Flask, render_template,jsonify, request, g
-
+import pandas as pd
+import numpy as np
+from simple_salesforce import Salesforce, SalesforceLogin
+import json
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
@@ -38,5 +41,24 @@ def recCredential():
 
     #decoloads(request)
     #cred.append(creds)
+    loginData = AuthAndRetrieveData(request.json['userName'], request.json['password'], request.json['token'], request.json['isProduction'])
+    loginData.retrieveData()
     return request.json['username'] #jsonify({'cred': c
     # reds})
+    
+    
+class AuthAndRetrieveData:
+    def __init__(self, userName, password, token, isProduction):
+        self.userName = userName
+        self.password = password
+        self.isProduction = isProduction
+        self.sf = null;
+        
+    def authentication():
+        session_id, instance = SalesforceLogin(userName, password, security_token=token, sandbox=isProduction) 
+        sf = Salesforce(instance=instance, session_id=session_id)
+    
+    def retrieveData(self):
+        queryRFA = sf.bulk.Request_for_Assistance__c.query("Select id, Name from Request_for_Assistance__c limit 10")
+        
+    
