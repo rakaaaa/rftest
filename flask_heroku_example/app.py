@@ -36,7 +36,8 @@ def recCredential():
 
     #creds = {'username' : request.json['username']}
 
-  
+    decoded = json.loads(request)
+    print(decoded)
     #cred.append(creds)
     return request.json['username'] #jsonify({'cred': c
     # reds})
