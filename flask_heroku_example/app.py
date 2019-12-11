@@ -1,7 +1,7 @@
 import os
 import psycopg2
 from flask import Flask, render_template,jsonify, request, g
-im
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
@@ -36,8 +36,7 @@ def recCredential():
 
     #creds = {'username' : request.json['username']}
 
-    #decoded = json.loads(request)
-    #print(decoded)
+    #decoloads(request)
     #cred.append(creds)
     return request.json['username'] #jsonify({'cred': c
     # reds})
