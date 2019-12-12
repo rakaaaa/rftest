@@ -11,7 +11,7 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
 
 
 #def connect_db():
- @   return psycopg2.connect(os.environ.get('DATABASE_URL'))
+ #   return psycopg2.connect(os.environ.get('DATABASE_URL'))
 
 
 #@app.before_request
