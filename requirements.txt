@@ -7,3 +7,4 @@ jsonschema==3.0.1
 numpy==1.16.2
 py==1.8.0
 simple-salesforce==0.74.3
+gunicorn
