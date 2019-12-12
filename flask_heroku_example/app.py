@@ -44,10 +44,6 @@ def recCredential():
     
     
 class AuthAndRetrieveData:
-    userName = ''
-    password = ''
-    isSandbox = ''
-    token = ''
     def __init__(self, userName, password, token, isSandbox):
         self.userName = userName
         self.password = password
@@ -55,8 +51,8 @@ class AuthAndRetrieveData:
         self.token = token
         
     def authentication(self, data):
-        if(token):
-            session_id, instance = SalesforceLogin(userName, password, security_token=token, sandbox=isSandbox ) 
+        if(self.token):
+            session_id, instance = SalesforceLogin(self.userName, self.password, security_token=self.token, sandbox=self.isSandbox ) 
         else:
             session_id, instance = SalesforceLogin(userName, password, sandbox=isSandbox )         
         sf = Salesforce(instance=instance, session_id=session_id)
