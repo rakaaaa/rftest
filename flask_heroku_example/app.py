@@ -54,7 +54,7 @@ class AuthAndRetrieveData:
         if(self.token):
             session_id, instance = SalesforceLogin(self.userName, self.password, security_token=self.token, sandbox=self.isSandbox ) 
         else:
-            session_id, instance = SalesforceLogin(userName, password, sandbox=isSandbox )         
+            session_id, instance = SalesforceLogin(self.userName, self.password, sandbox=self.isSandbox )         
         sf = Salesforce(instance=instance, session_id=session_id)
         return sf
         
