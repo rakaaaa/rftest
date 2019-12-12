@@ -1,10 +1,4 @@
 Flask==1.0.2
-pandas==0.24.2
 ipython==7.4.0
-ipython-genutils==0.2.0
-ipywidgets==7.4.2
-jsonschema==3.0.1
-numpy==1.16.2
-py==1.8.0
 simple-salesforce==0.74.3
 gunicorn
