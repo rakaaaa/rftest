@@ -50,7 +50,7 @@ class AuthAndRetrieveData:
         self.password = password
         self.isSandbox = isSandbox 
         
-    def authentication():
+    def authentication(self):
         if(token):
             session_id, instance = SalesforceLogin(userName, password, security_token=token, sandbox=isSandbox ) 
         else:
