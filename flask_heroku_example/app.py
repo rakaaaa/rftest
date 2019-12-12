@@ -37,10 +37,6 @@ def index():
 @app.route('/auth', methods=['GET', 'POST'])
 def recCredential():
 
-    #creds = {'username' : request.json['username']}
-
-    #decoloads(request)
-    #cred.append(creds)
     loginData = AuthAndRetrieveData(request.json['userName'], request.json['password'], request.json['token'], request.json['isSandbox'])
     sf = loginData.authentication()
     queryRFA = loginData.retrieveData(sf)
