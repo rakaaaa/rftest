@@ -21,7 +21,6 @@ app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'XYZ')
 
 #@app.route('/')
 #def index():
-#    cur = g.db_conn.cursor()
  #   cur.execute("SELECT * FROM country;")
   #  return render_template('index.html', countries=cur.fetchall())
  #      return "Hello Krsna"   
