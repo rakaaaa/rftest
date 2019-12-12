@@ -37,7 +37,7 @@ def index():
 def recCredential():
 
     loginData = AuthAndRetrieveData(request.json['userName'], request.json['password'], request.json['token'], request.json['isSandbox'])
-    sf = loginData.authentication()
+    sf = loginData.authentication("Test")
     queryRFA = loginData.retrieveData(sf)
     return queryRFA #jsonify({'cred': c
     # reds})
@@ -49,7 +49,7 @@ class AuthAndRetrieveData:
         self.password = password
         self.isSandbox = isSandbox 
         
-    def authentication(self):
+    def authentication(self, data):
         if(token):
             session_id, instance = SalesforceLogin(userName, password, security_token=token, sandbox=isSandbox ) 
         else:
