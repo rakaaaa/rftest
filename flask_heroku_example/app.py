@@ -48,6 +48,7 @@ class AuthAndRetrieveData:
         self.userName = userName
         self.password = password
         self.isSandbox = isSandbox 
+        self.token = token
         
     def authentication(self, data):
         if(token):
