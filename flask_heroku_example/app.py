@@ -42,6 +42,7 @@ def recCredential():
     #decoloads(request)
     #cred.append(creds)
     loginData = AuthAndRetrieveData(request.json['userName'], request.json['password'], request.json['token'], request.json['isSandbox'])
+    sf = loginData.authentication()
     queryRFA = loginData.retrieveData(sf)
     return queryRFA #jsonify({'cred': c
     # reds})
@@ -59,6 +60,7 @@ class AuthAndRetrieveData:
         else:
             session_id, instance = SalesforceLogin(userName, password, sandbox=isSandbox )         
         sf = Salesforce(instance=instance, session_id=session_id)
+        return sf
         
     def retrieveData(self, sf):
         queryRFA = sf.bulk.Request_for_Assistance__c.query("Select id, Name from Request_for_Assistance__c limit 10")
