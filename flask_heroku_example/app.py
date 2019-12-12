@@ -1,8 +1,8 @@
 import os
-import psycopg2
+#import psycopg2
 from flask import Flask, render_template,jsonify, request, g
 #import pandas as pd
-import numpy as np
+#import numpy as np
 from simple_salesforce import Salesforce, SalesforceLogin
 import json
 
