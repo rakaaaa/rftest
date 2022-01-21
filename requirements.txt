@@ -1,5 +1,5 @@
 Flask==1.0.2
-ipython==7.4.0
+ipython==7.16.3
 simple-salesforce==0.74.3
 gunicorn
 whitenoise
